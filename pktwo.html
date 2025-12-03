@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PK Digital AI M&A Agency</title>
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic components --><script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Tailwind Configuration */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'pk-blue': '#0970F3',
+                        'pk-dark': '#211827',
+                        'pk-light': '#09f3eb',
+                    }
+                }
+            }
+        }
+        /* Custom Animation for the hero section background */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animated-gradient {
+            background: linear-gradient(-45deg, #0070F3, #1D4ED8, #0070F3);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        /* New subtle gradient for the Navbar */
+        .nav-gradient {
+            background: linear-gradient(90deg, #111827 0%, #1D4ED8 100%);
+        }
+
+        /* Style for the floating/pulsing icon */
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 112, 243, 0.4); }
+            50% { box-shadow: 0 0 10px 10px rgba(0, 112, 243, 0.6); }
+        }
+        .ai-icon-animation {
+            animation: pulseGlow 3s infinite ease-in-out;
+        }
+        /* Scroll snapping for better navigation experience */
+        .scroll-snap-section {
+            scroll-snap-align: start;
+        }
+        /* Ensure the map placeholder looks professional */
+        .map-placeholder {
+            min-height: 400px 200px;
+            background: #D1D5DB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4B5563;
+            font-weight: 600;
+        }
+        /* Custom style for the logo in the navbar */
+        .navbar-logo {
+            height: 40px; /* Adjust as needed */
+            width: auto;
+        }
+        /* Custom style for the logo in the footer */
+        .footer-logo {
+            height: 60px; /* Adjust as needed */
+            width: auto;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-pk-light text-pk-dark font-sans scroll-smooth" x-data="{ currentSection: 'home', mobileMenuOpen: false }">
+
+    <!-- Navbar (Updated with Logo Image) --><header class="sticky top-0 z-50 nav-gradient shadow-xl">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo/Agency Name (now an image) --><div class="flex-shrink-0">
+                    <a href="#home">
+                        <img src="gemini_pk.png" alt="PK AI Your Digital Partner Logo" class="navbar-logo">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Links --><div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-white hover:text-pk-blue px-3 py-2 rounded-md text-sm font-medium transition duration-150 border-b-2 border-transparent hover:border-pk-blue">Home</a>
+                        <a href="#services" class="text-white hover:text-pk-blue px-3 py-2 rounded-md text-sm font-medium transition duration-150 border-b-2 border-transparent hover:border-pk-blue">Services</a>
+                        <a href="#about" class="text-white hover:text-pk-blue px-3 py-2 rounded-md text-sm font-medium transition duration-150 border-b-2 border-transparent hover:border-pk-blue">About</a>
+                        <a href="#career" class="text-white hover:text-pk-blue px-3 py-2 rounded-md text-sm font-medium transition duration-150 border-b-2 border-transparent hover:border-pk-blue">Career</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button --><div class="md:hidden">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu --><div x-show="mobileMenuOpen" class="md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" @click="mobileMenuOpen = false" class="text-white hover:bg-pk-blue block px-3 py-2 rounded-md text-base font-medium transition duration-150">Home</a>
+                <a href="#services" @click="mobileMenuOpen = false" class="text-white hover:bg-pk-blue block px-3 py-2 rounded-md text-base font-medium transition duration-150">Services</a>
+                <a href="#about" @click="mobileMenuOpen = false" class="text-white hover:bg-pk-blue block px-3 py-2 rounded-md text-base font-medium transition duration-150">About</a>
+                <a href="#career" @click="mobileMenuOpen = false" class="text-white hover:bg-pk-blue block px-3 py-2 rounded-md text-base font-medium transition duration-150">Career</a>
+            </div>
+        </div>
+    </header>
+    <!-- End Navbar --><main class="min-h-screen">
+        <!-- Home Section (Hero) --><section id="home" class="scroll-snap-section animated-gradient text-white flex items-center justify-center py-20 sm:py-32 lg:py-40">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <!-- AI Icon Animation --><div class="inline-flex p-4 rounded-full bg-white bg-opacity-20 mb-8 ai-icon-animation">
+                    <i data-lucide="brain-circuit" class="w-12 h-12 text-white"></i>
+                </div>
+                <!-- Hero Content --><h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-4">
+                    AI-Powered Digital Growth for SMEs
+                </h1>
+                <p class="text-xl sm:text-2xl font-medium text-gray-200 max-w-3xl mx-auto mb-8">
+                    PK Digital AI M&A agency transforms your business by combining **A**nalytics, **I**nsight, **M**arketing, and **A**utomation into a single, cohesive strategy.
+                </p>
+                <a href="#services" class="inline-block px-8 py-3 text-lg font-semibold text-pk-blue bg-white rounded-full shadow-xl hover:bg-pk-light transition duration-300 transform hover:scale-105" style="color: black;">
+                    See Our Solutions
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Section (Updated with Dynamic Icons) --><section id="services" class="scroll-snap-section py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-pk-dark text-center mb-4">Our AI-Driven Services</h2>
+                <p class="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+                    A complete suite of digital services designed to enhance your presence, automate content, and deliver measurable customer insights.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Service 1: Content & Posting --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
+                            <i data-lucide="megaphone" style="color: black;" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">AI Content Creation & Posting</h3>
+                        <p class="text-gray-500 text-sm">Regular, brand-consistent ad post creation and automated posting across Instagram, YouTube Shorts, LinkedIn, Facebook, WP, and Telegram.</p>
+                    </div>
+                    <!-- Service 2: Digital Presence --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
+                            <i data-lucide="globe" style="color: black;" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Holistic Digital Presence</h3>
+                        <p class="text-gray-500 text-sm">Assisting with overall digital visibility, ensuring your brand is found and trusted across the digital landscape.</p>
+                    </div>
+                    <!-- Service 3: Google Profile --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
+                            <i data-lucide="map-pin"  style="color: black;" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Google Profile & Map Services</h3>
+                        <p class="text-gray-500 text-sm">Creating and diligently keeping your Google My Business profile and map services accurate, optimized, and engaging.</p>
+                    </div>
+                    <!-- Service 4: Marketing Proposal --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
+                            <i data-lucide="file-text" style="color: black;" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Custom Yearly Marketing Proposals</h3>
+                        <p class="text-gray-500 text-sm">Developing custom, data-backed marketing proposals for yearly execution, tailored to your specific growth targets.</p>
+                    </div>
+                    <!-- Service 5: AI Analysis & Reporting --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
+                            <i data-lucide="bar-chart-3" style="color: black;" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Monthly AI Analysis & Reporting</h3>
+                        <p class="text-gray-500 text-sm">Creating and maintaining an AI analysis framework for your business, reporting monthly on crucial customer behavior and trends.</p>
+                    </div>
+                    <!-- Service 6: Landing Pages --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
+                            <i data-lucide="layout"  style="color: black;" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Conversion-Optimized Landing Pages</h3>
+                        <p class="text-gray-500 text-sm">Creating high-performance landing pages designed to convert traffic into leads or sales for specific campaigns.</p>
+                    </div>
+                    <!-- Service 7: WP Chat Linking --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
+                            <i data-lucide="message-square" style="color: black;" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">WhatsApp Chat Integration</h3>
+                        <p class="text-gray-500 text-sm">Seamlessly linking your business's WhatsApp chat number with your digital properties for immediate customer communication.</p>
+                    </div>
+                    <!-- Service 8: Digital Products --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
+                            <i data-lucide="gem" style="color: black;" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Useful Digital Product Enhancement</h3>
+                        <p class="text-gray-500 text-sm">Creating or assisting in the deployment of useful digital products (tools, calculators, resources) to enhance your core business offering.</p>
+                    </div>
+                    <!-- Service 9: Staff Training --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
+                            <i data-lucide="award" style="color: black;" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Staff Digital Training</h3>
+                        <p class="text-gray-500 text-sm">Special training programs for your staff on digital presence best practices and maximizing the use of digital tools.</p>
+                    </div>
+                    <!-- Service 10: Exhibitions --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
+                            <i data-lucide="building-2" style="color: black;" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Exhibition & Society Participation</h3>
+                        <p class="text-gray-500 text-sm">Organizing your exhibition participation and providing information/guidance on registered society compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prepare Yourself Section --><section id="prepare" class="py-20 bg-pk-dark text-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-white text-center mb-12">Prepare Yourself: Your Success Checklist</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Step 1 (Enhanced with subtle gradient border) --><div class="p-6 bg-gray-800 rounded-xl shadow-2xl transition duration-300 hover:bg-pk-blue border-b-4 border-pk-blue">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i data-lucide="target" class="w-6 h-6 text-yellow-400"></i>
+                            <h3 class="text-2xl font-bold">1. Define Clear Objectives</h3>
+                        </div>
+                        <p class="text-gray-300">Before we begin, clearly define your desired outcomes. Are you aiming for 20% growth in leads, 15% more foot traffic, or increased brand recognition? Specific goals drive our AI strategy.</p>
+                    </div>
+                    <!-- Step 2 (Enhanced with subtle gradient border) --><div class="p-6 bg-gray-800 rounded-xl shadow-2xl transition duration-300 hover:bg-pk-blue border-b-4 border-pk-blue">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i data-lucide="image" class="w-6 h-6 text-yellow-400"></i>
+                            <h3 class="text-2xl font-bold">2. Prepare Key Assets</h3>
+                        </div>
+                        <p class="text-gray-300">Gather all essential brand assets: high-resolution logos, brand guidelines, existing best-performing content, and any product/service images we can use immediately.</p>
+                    </div>
+                    <!-- Step 3 (Enhanced with subtle gradient border) --><div class="p-6 bg-gray-800 rounded-xl shadow-2xl transition duration-300 hover:bg-pk-blue border-b-4 border-pk-blue">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i data-lucide="user-check" class="w-6 h-6 text-yellow-400"></i>
+                            <h3 class="text-2xl font-bold">3. Allocate an Internal Liaison</h3>
+                        </div>
+                        <p class="text-gray-300">Designate one internal point-of-contact for quick approvals, feedback, and data sharing. This streamlines our monthly reporting and campaign deployment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Review Section --><section id="reviews" class="py-20 bg-pk-light">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-pk-dark text-center mb-12">Client Success Stories</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Review 1 --><div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-pk-blue">
+                        <i data-lucide="quote" class="w-8 h-8 text-pk-blue mb-4"></i>
+                        <p class="text-gray-700 italic mb-4">"The AI-driven analysis was a game-changer. We immediately stopped wasting budget on ineffective social campaigns and doubled our engagement rate within two months. PK Digital is essential."</p>
+                        <div class="font-bold text-pk-dark">- Sarah J., Small Retail Chain CEO</div>
+                    </div>
+                    <!-- Review 2 --><div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-pk-blue">
+                        <i data-lucide="quote" class="w-8 h-8 text-pk-blue mb-4"></i>
+                        <p class="text-gray-700 italic mb-4">"From the custom marketing proposal to the staff training, every service was professional and tailored. The constant social posting keeps our brand top-of-mind effortlessly."</p>
+                        <div class="font-bold text-pk-dark">- Mark L., Medium E-Commerce Manager</div>
+                    </div>
+                    <!-- Review 3 --><div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-pk-blue">
+                        <i data-lucide="quote" class="w-8 h-8 text-pk-blue mb-4"></i>
+                        <p class="text-gray-700 italic mb-4">"Their expertise with Google My Business and map services brought in a huge influx of local customers. Finally, a company that delivers measurable ROI, not just promises."</p>
+                        <div class="font-bold text-pk-dark">- Anil V., Local Service Provider Owner</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section --><section id="about" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-pk-dark text-center mb-4">About PK Digital AI M&A</h2>
+                <div class="lg:flex lg:space-x-12 mt-12">
+                    <!-- AI Description (2/3) --><div class="lg:w-2/3 mb-10 lg:mb-0 p-6 border rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 border-b pb-2 text-pk-blue">How We Achieve Results: The AI M&A Edge</h3>
+                        <p class="text-gray-600 mb-4">
+                            PK Digital stands for **AI**-powered **M**arketing and **A**nalytics. We leverage proprietary machine learning models to analyze vast datasets on customer behavior, trend signals, and competitor strategies. This **Intelligence** is then used to **Automate** content creation, optimize posting schedules across platforms, and predict the most profitable marketing channels.
+                        </p>
+                        <p class="text-gray-600">
+                            Our process bypasses guesswork, delivering content that is proven to convert, and ensuring that every dollar spent contributes directly to your business goals. We provide monthly, actionable reports based on real customer data, allowing for continuous, iterative improvement.
+                        </p>
+                    </div>
+
+                    <!-- Contact Details (1/3) --><div class="lg:w-1/3 p-6 bg-pk-light rounded-xl shadow-lg border-l-4 border-pk-blue">
+                        <h3 class="text-2xl font-bold mb-4 text-pk-dark">Contact Us</h3>
+                        <div class="space-y-3">
+                            <p class="flex items-center text-gray-700">
+                                <i data-lucide="phone" class="w-5 h-5 mr-3 text-pk-blue"></i>
+                                **Phone:** +91 948610 06299
+                            </p>
+                            <p class="flex items-center text-gray-700">
+                                <i data-lucide="mail" class="w-5 h-5 mr-3 text-pk-blue"></i>
+                                **Email:** pkdigitalai@gmail.com
+                            </p>
+                            <p class="flex items-start text-gray-700">
+                                <i data-lucide="map-pin" class="w-5 h-5 mr-3 mt-1 text-pk-blue flex-shrink-0"></i>
+                                **Address:** Villa 85,BBCL Villa Haven,Chennai-600077.  Ultra amar avenue, Arumbakkam Chennai-600094                        
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Placeholder --><div class="mt-12">
+                    <h3 class="text-2xl font-bold mb-4 text-pk-dark">Our Location</h3>
+                    <div class="map-placeholder rounded-xl shadow-xl">
+                         <!-- In a real deployment, this would be an embedded Google Map iframe --><i data-lucide="map" class="w-5 h-5 mr-2"></i> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5062963973073!2d80.1334613!3d13.067067000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526185a39acf1d%3A0x8d9727f5a002be61!2sBBCL%20Villa%20Haven!5e0!3m2!1sen!2sin!4v1764682348230!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Section --><section id="career" class="py-20 bg-pk-dark text-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-white text-center mb-4">Career Opportunities</h2>
+                <p class="text-xl text-blue-400 text-center mb-12 max-w-2xl mx-auto">
+                    Join the team shaping the future of digital marketing. We are looking for talented individuals passionate about AI, M&A strategy, and client success.
+                </p>
+
+                <div class="bg-gray-800 p-8 rounded-xl shadow-2xl max-w-lg mx-auto">
+                    <form onsubmit="event.preventDefault(); showCareerMessage();">
+                        <div class="mb-6">
+                            <label for="name" class="block text-sm font-medium text-gray-200 mb-2">Full Name</label>
+                            <input type="text" id="name" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-pk-blue focus:border-pk-blue" required>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="email" class="block text-sm font-medium text-gray-200 mb-2">Email ID</label>
+                            <input type="email" id="email" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-pk-blue focus:border-pk-blue" required>
+                        </div>
+
+                        <div class="mb-8">
+                            <label for="role" class="block text-sm font-medium text-gray-200 mb-2">Select Preferred Role</label>
+                            <select id="role" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-pk-blue focus:border-pk-blue">
+                                <option value="" disabled selected>Select an open position</option>
+                                <option value="ai-analyst">AI Marketing Analyst (Service 5)</option>
+                                <option value="content-specialist">Social Content Specialist (Service 1)</option>
+                                <option value="sales-strategist">Digital Sales Strategist (Service 4)</option>
+                                <option value="trainer">Staff Digital Trainer (Service 9)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="w-full bg-pk-blue text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition duration-300 transform hover:scale-[1.01] shadow-xl">
+                            Apply Now
+                        </button>
+                    </form>
+                    <div id="career-message" class="mt-4 text-center text-green-400 font-medium hidden">
+                        Thank you for your interest! Your application has been submitted for review.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms, Conditions, and Policy Section --><section id="policy" class="py-20 bg-pk-light">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-pk-dark text-center mb-12">Terms, Conditions & Privacy Policy</h2>
+                <div class="bg-white p-8 rounded-xl shadow-2xl border border-gray-200">
+                    <!-- Terms and Conditions --><h3 class="text-2xl font-bold mb-4 text-pk-blue">1. Terms and Conditions</h3>
+                    <p class="text-gray-600 mb-6">
+                        Services are rendered under a custom-drafted yearly agreement based on the marketing proposal (Service 4). All content created by PK Digital remains the intellectual property of the client upon final payment. Contract minimum duration is twelve (12) months. Service scope adjustments require a 30-day written notice and may affect the agreed-upon monthly retainer.
+                    </p>
+
+                    <!-- Privacy Policy --><h3 class="text-2xl font-bold mb-4 text-pk-blue">2. Privacy Policy</h3>
+                    <p class="text-gray-600">
+                        PK Digital is committed to protecting the privacy of both clients and their customers. All customer behavior data accessed for AI analysis (Service 5) is anonymized and used exclusively for the purpose of improving the client's marketing performance. We do not share, sell, or disclose specific client data to third parties. Secure data handling protocols are strictly enforced for all analytical processes.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer --><footer class="bg-pk-dark py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+            <img src="gemini_pk.png" alt="PKDIGITAL-AI Your Digital Partner" class="footer-logo mx-auto">
+            <p>&copy; <span id="current-year"></span> PK Digital AI M&A Agency. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Icon Replacement, Footer Year, and Form Messaging --><script>
+        // Lucide Icons replacement
+        lucide.createIcons();
+
+        // Dynamic Footer Year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Simple Career Form Message
+        function showCareerMessage() {
+            const messageElement = document.getElementById('career-message');
+            messageElement.classList.remove('hidden');
+            // Hide the form message after 5 seconds
+            setTimeout(() => {
+                messageElement.classList.add('hidden');
+            }, 5000);
+        }
+
+        // Simple JavaScript for smooth scrolling (optional, but good practice)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</body>
+</html>
