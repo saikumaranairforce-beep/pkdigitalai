@@ -3,432 +3,479 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PK Digital AI M&A Agency</title>
-    <meta name="description" content="PK Digital AI M&A Agency offers AI-driven digital growth for SMEs, specializing in Content Creation, SEO, Google My Business optimization, and data-backed Marketing Proposals to maximize ROI.">
-<meta name="keywords" content="AI digital marketing, SME digital growth, AI content creation, Google My Business optimization, Marketing Automation, Digital Agency Chennai, AI Analysis & Reporting">
-<meta name="author" content="PK Digital AI M&A Agency">
-<meta name="robots" content="index, follow">
-
-<meta property="og:title" content="PK Digital AI M&A Agency: AI-Powered Digital Growth for SMEs">
-<meta property="og:description" content="We transform your business by combining Analytics, Insight, Marketing, and Automation (AI M&A) into a single, cohesive strategy for measurable growth.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="[YOUR_WEBSITE_URL_HERE]">
-<meta property="og:image" content="[YOUR_ABSOLUTE_IMAGE_URL_HERE]">
-<meta property="og:site_name" content="PK Digital AI M&A Agency">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@[YOUR_TWITTER_HANDLE]">
-<meta name="twitter:title" content="PK Digital AI M&A Agency: AI-Powered Digital Growth for SMEs">
-<meta name="twitter:description" content="Maximize your SME's digital potential with AI-driven content, holistic presence management, and data analysis. Stop guessing, start growing.">
-<meta name="twitter:image" content="[YOUR_ABSOLUTE_IMAGE_URL_HERE]">
-
-<link rel="icon" type="image/png" href="[YOUR_FAVICON_PATH_HERE]">
-    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons for aesthetic components --><script src="https://unpkg.com/lucide@latest"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5L0PQHCF3W"></script>
-    <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5L0PQHCF3W');
-</script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* Custom Tailwind Configuration */
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        'pk-blue': '#0970F3',
-                        'pk-dark': '#211827',
-                        'pk-light': '#09f3eb',
-                    }
-                }
-            }
-        }
-        /* Custom Animation for the hero section background */
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .animated-gradient {
-            background: linear-gradient(-45deg, #0070F3, #1D4ED8, #0070F3);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-        }
-
-        /* New subtle gradient for the Navbar */
-        .nav-gradient {
-            background: linear-gradient(90deg, #111827 0%, #1D4ED8 100%);
-        }
-
-        /* Style for the floating/pulsing icon */
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 112, 243, 0.4); }
-            50% { box-shadow: 0 0 10px 10px rgba(0, 112, 243, 0.6); }
-        }
-        .ai-icon-animation {
-            animation: pulseGlow 3s infinite ease-in-out;
-        }
-        /* Scroll snapping for better navigation experience */
-        .scroll-snap-section {
-            scroll-snap-align: start;
-        }
-        /* Ensure the map placeholder looks professional */
-        .map-placeholder {
-            min-height: 400px 200px;
-            background: #D1D5DB;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #4B5563;
-            font-weight: 600;
-        }
-        /* Custom style for the logo in the navbar */
-        .navbar-logo {
-            height: 40px; /* Adjust as needed */
-            width: auto;
-        }
-        /* Custom style for the logo in the footer */
-        .footer-logo {
-            height: 60px; /* Adjust as needed */
-            width: auto;
-            margin-bottom: 1rem;
-        }
-    </style>
+    <title>PK Digital AI M&A Agency - Digital Marketing Solutions</title>
+    <meta name="description" content="PK Digital AI M&A Agency - Empowering small and medium businesses with AI-powered digital marketing, analytics, and comprehensive online solutions.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-pk-light text-pk-dark font-sans scroll-smooth" x-data="{ currentSection: 'home', mobileMenuOpen: false }">
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>PK Digital AI M&A</h1>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
+                <li><a href="#services" class="nav-link" data-page="services">Services</a></li>
+                <li><a href="#about" class="nav-link" data-page="about">About</a></li>
+                <li><a href="#career" class="nav-link" data-page="career">Career</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <!-- Navbar (Updated with Logo Image) --><header class="sticky top-0 z-50 nav-gradient shadow-xl">
-        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <!-- Logo/Agency Name (now an image) --><div class="flex-shrink-0">
-                    <a href="#home">
-                        <img src="gemini_pk.png" alt="PK AI Your Digital Partner Logo" class="navbar-logo">
-                    </a>
+    <!-- Main Content -->
+    <main id="mainContent">
+        <!-- Home Page -->
+        <div id="homePage" class="page active">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Transform Your Digital Presence with AI-Powered Solutions</h1>
+                        <p class="hero-subtitle">Empowering small and medium businesses with comprehensive digital marketing, analytics, and AI-driven strategies for sustainable growth.</p>
+                        <button class="cta-button" onclick="navigateTo('services')">
+                            Explore Our Services <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Us -->
+            <section class="why-choose">
+                <div class="container">
+                    <h2 class="section-title">Why Choose PK Digital?</h2>
+                    <div class="features-grid">
+                        <div class="feature-card blue">
+                            <div class="feature-icon">🎯</div>
+                            <h3>Targeted Solutions</h3>
+                            <p>Customized strategies designed specifically for your business needs and goals.</p>
+                        </div>
+                        <div class="feature-card purple">
+                            <div class="feature-icon">📊</div>
+                            <h3>Data-Driven Results</h3>
+                            <p>Monthly analytics and reports to track progress and optimize performance.</p>
+                        </div>
+                        <div class="feature-card green">
+                            <div class="feature-icon">🚀</div>
+                            <h3>Rapid Growth</h3>
+                            <p>Proven strategies that deliver measurable results and business expansion.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Customer Reviews -->
+            <section class="reviews">
+                <div class="container">
+                    <h2 class="section-title">What Our Clients Say</h2>
+                    <div class="reviews-grid">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-avatar">👨‍💼</div>
+                                <div class="reviewer-info">
+                                    <h4>Rajesh Kumar</h4>
+                                    <p>Kumar Textiles Pvt Ltd</p>
+                                </div>
+                            </div>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">"PK Digital transformed our social media presence completely. Their monthly analytics reports helped us understand our customers better and increase sales by 45% in just 6 months. Highly professional team!"</p>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-avatar">👩‍💼</div>
+                                <div class="reviewer-info">
+                                    <h4>Priya Sharma</h4>
+                                    <p>Sharma Fashion House</p>
+                                </div>
+                            </div>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">"The custom marketing proposal they created was exactly what we needed. Their staff training program empowered our team to manage our digital presence confidently. Best investment we made for our business!"</p>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-avatar">👨‍💼</div>
+                                <div class="reviewer-info">
+                                    <h4>Mohammed Ali</h4>
+                                    <p>Ali Electronics & Services</p>
+                                </div>
+                            </div>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">"From Google Maps optimization to WhatsApp integration, PK Digital handled everything seamlessly. Our customer inquiries increased by 60% and our online visibility improved dramatically. Excellent service!"</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="container">
+                    <h2>Ready to Transform Your Business?</h2>
+                    <p>Contact us today for a free consultation and custom marketing proposal.</p>
+                    <button class="cta-button-white" onclick="navigateTo('about')">Get In Touch</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Services Page -->
+        <div id="servicesPage" class="page">
+            <div class="container page-content">
+                <div class="page-header">
+                    <h1>Our Services</h1>
+                    <p>Comprehensive digital solutions tailored for small and medium businesses to thrive in the digital age.</p>
                 </div>
 
-                <!-- Desktop Navigation Links --><div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#home" class="text-white hover:text-pk-blue px-3 py-2 rounded-md text-sm font-medium transition duration-150 border-b-2 border-transparent hover:border-pk-blue">Home</a>
-                        <a href="#services" class="text-white hover:text-pk-blue px-3 py-2 rounded-md text-sm font-medium transition duration-150 border-b-2 border-transparent hover:border-pk-blue">Services</a>
-                        <a href="#about" class="text-white hover:text-pk-blue px-3 py-2 rounded-md text-sm font-medium transition duration-150 border-b-2 border-transparent hover:border-pk-blue">About</a>
-                        <a href="#career" class="text-white hover:text-pk-blue px-3 py-2 rounded-md text-sm font-medium transition duration-150 border-b-2 border-transparent hover:border-pk-blue">Career</a>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-chart-line service-icon"></i>
+                        <h3>Social Media Management</h3>
+                        <p>Professional ad post creation and regular posting on Instagram, YouTube Shorts, LinkedIn, Facebook, WhatsApp, and Telegram on your behalf.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-globe service-icon"></i>
+                        <h3>Digital Presence Assistance</h3>
+                        <p>Comprehensive support to establish and maintain your business's digital footprint across all major platforms.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-map-marker-alt service-icon"></i>
+                        <h3>Google Profile & Maps</h3>
+                        <p>Creation and optimization of Google Business Profile and Maps services to enhance local visibility.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-award service-icon"></i>
+                        <h3>Custom Marketing Proposals</h3>
+                        <p>Tailored yearly marketing strategies designed specifically for your business goals and target audience.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-users service-icon"></i>
+                        <h3>Business Analytics & Reporting</h3>
+                        <p>Monthly analysis and detailed reports on customer behavior, engagement metrics, and business performance.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-bolt service-icon"></i>
+                        <h3>Landing Page Creation</h3>
+                        <p>Professional landing pages designed to convert visitors into customers with compelling design and copy.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-phone service-icon"></i>
+                        <h3>WhatsApp Integration</h3>
+                        <p>Seamless linking with WhatsApp Business for instant customer communication and support.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-rocket service-icon"></i>
+                        <h3>Digital Product Development</h3>
+                        <p>Creation and assistance with useful digital products to enhance and scale your business operations.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-chalkboard-teacher service-icon"></i>
+                        <h3>Staff Training Programs</h3>
+                        <p>Specialized training for your team on digital presence and maximizing digital tools for business growth.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-handshake service-icon"></i>
+                        <h3>Exhibition & Event Support</h3>
+                        <p>Organization and participation assistance for exhibitions with registered society information management.</p>
                     </div>
                 </div>
 
-                <!-- Mobile Menu Button --><div class="md:hidden">
-                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                            <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
+                <!-- Terms & Conditions -->
+                <div class="terms-section">
+                    <h2>Terms & Conditions</h2>
+                    <div class="terms-content">
+                        <div class="term-item">
+                            <h3>1. Service Agreement</h3>
+                            <p>All services are provided as per the mutually agreed contract. Custom packages are designed based on client requirements and business needs.</p>
+                        </div>
+                        <div class="term-item">
+                            <h3>2. Payment Terms</h3>
+                            <p>Payment schedules are outlined in the service agreement. Monthly, quarterly, and annual packages are available. A 50% advance is required for yearly contracts.</p>
+                        </div>
+                        <div class="term-item">
+                            <h3>3. Content & Access</h3>
+                            <p>Clients must provide necessary access to social media accounts, Google Business Profile, and other platforms. All content created remains the property of the client.</p>
+                        </div>
+                        <div class="term-item">
+                            <h3>4. Confidentiality</h3>
+                            <p>We maintain strict confidentiality of all client data, business information, and analytics. Non-disclosure agreements are available upon request.</p>
+                        </div>
+                        <div class="term-item">
+                            <h3>5. Service Modifications</h3>
+                            <p>Services can be modified or upgraded based on mutual agreement. Notice period of 30 days is required for contract termination.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </nav>
 
-        <!-- Mobile Menu --><div x-show="mobileMenuOpen" class="md:hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" @click="mobileMenuOpen = false" class="text-white hover:bg-pk-blue block px-3 py-2 rounded-md text-base font-medium transition duration-150">Home</a>
-                <a href="#services" @click="mobileMenuOpen = false" class="text-white hover:bg-pk-blue block px-3 py-2 rounded-md text-base font-medium transition duration-150">Services</a>
-                <a href="#about" @click="mobileMenuOpen = false" class="text-white hover:bg-pk-blue block px-3 py-2 rounded-md text-base font-medium transition duration-150">About</a>
-                <a href="#career" @click="mobileMenuOpen = false" class="text-white hover:bg-pk-blue block px-3 py-2 rounded-md text-base font-medium transition duration-150">Career</a>
+                <!-- Privacy Policy -->
+                <div class="terms-section">
+                    <h2>Privacy Policy</h2>
+                    <div class="terms-content">
+                        <div class="term-item">
+                            <h3>Data Collection</h3>
+                            <p>We collect business information, contact details, and analytics data necessary for providing our services effectively.</p>
+                        </div>
+                        <div class="term-item">
+                            <h3>Data Usage</h3>
+                            <p>All data is used solely for service delivery, analysis, and reporting purposes. We do not share client data with third parties without explicit consent.</p>
+                        </div>
+                        <div class="term-item">
+                            <h3>Data Security</h3>
+                            <p>We implement industry-standard security measures to protect client data. Regular backups and secure storage systems are maintained.</p>
+                        </div>
+                        <div class="term-item">
+                            <h3>Client Rights</h3>
+                            <p>Clients have the right to access, modify, or request deletion of their data at any time. Data portability is available upon request.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </header>
-    <!-- End Navbar --><main class="min-h-screen">
-        <!-- Home Section (Hero) --><section id="home" class="scroll-snap-section animated-gradient text-white flex items-center justify-center py-20 sm:py-32 lg:py-40">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <!-- AI Icon Animation --><div class="inline-flex p-4 rounded-full bg-white bg-opacity-20 mb-8 ai-icon-animation">
-                    <i data-lucide="brain-circuit" class="w-12 h-12 text-white"></i>
+
+        <!-- About Page -->
+        <div id="aboutPage" class="page">
+            <div class="container page-content">
+                <div class="about-content">
+                    <h1>About PK Digital AI M&A Agency</h1>
+                    <p class="about-intro">PK Digital AI M&A Agency is a pioneering digital marketing and business consulting firm dedicated to empowering small and medium-sized businesses with cutting-edge digital solutions powered by artificial intelligence and data-driven strategies.</p>
+
+                    <h2>Our Mission</h2>
+                    <p>We believe that every business, regardless of size, deserves access to professional-grade digital marketing and analytics. Our mission is to democratize digital excellence by providing affordable, comprehensive solutions that drive real business growth.</p>
+
+                    <h2>How We Achieve Excellence</h2>
+                    <div class="achievement-grid">
+                        <div class="achievement-card blue">
+                            <h3>🤖 AI-Powered Analytics</h3>
+                            <p>We leverage advanced AI algorithms to analyze customer behavior, market trends, and campaign performance, delivering actionable insights that drive decision-making.</p>
+                        </div>
+                        <div class="achievement-card purple">
+                            <h3>👥 Expert Team</h3>
+                            <p>Our team comprises digital marketing specialists, data analysts, and business consultants with years of industry experience across multiple sectors.</p>
+                        </div>
+                        <div class="achievement-card green">
+                            <h3>📊 Data-Driven Strategies</h3>
+                            <p>Every recommendation we make is backed by comprehensive data analysis, ensuring maximum ROI and measurable results for your business.</p>
+                        </div>
+                        <div class="achievement-card yellow">
+                            <h3>🎯 Custom Solutions</h3>
+                            <p>We don't believe in one-size-fits-all. Each strategy is meticulously crafted to align with your unique business goals, industry, and target audience.</p>
+                        </div>
+                    </div>
+
+                    <h2>Our Approach</h2>
+                    <ol class="approach-list">
+                        <li>
+                            <span class="step-number">1</span>
+                            <div>
+                                <strong>Discovery & Analysis:</strong> We begin by understanding your business, industry, competitors, and current digital presence through comprehensive audits.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-number">2</span>
+                            <div>
+                                <strong>Strategy Development:</strong> Our team creates a customized digital strategy with clear objectives, KPIs, and timeline for implementation.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-number">3</span>
+                            <div>
+                                <strong>Implementation:</strong> We execute the strategy with precision, managing all aspects of your digital presence while keeping you informed at every step.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-number">4</span>
+                            <div>
+                                <strong>Monitoring & Optimization:</strong> Continuous tracking, analysis, and optimization ensure your campaigns perform at their best.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-number">5</span>
+                            <div>
+                                <strong>Reporting & Training:</strong> Monthly reports provide transparency, and our training programs empower your team to maintain digital excellence.
+                            </div>
+                        </li>
+                    </ol>
                 </div>
-                <!-- Hero Content --><h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-4">
-                    AI-Powered Digital Growth for SMEs
-                </h1>
-                <p class="text-xl sm:text-2xl font-medium text-gray-200 max-w-3xl mx-auto mb-8">
-                    PK Digital AI M&A agency transforms your business by combining **A**nalytics, **I**nsight, **M**arketing, and **A**utomation into a single, cohesive strategy.
-                </p>
-                <a href="#services" class="inline-block px-8 py-3 text-lg font-semibold text-pk-blue bg-white rounded-full shadow-xl hover:bg-pk-light transition duration-300 transform hover:scale-105" style="color: black;">
-                    See Our Solutions
-                </a>
-            </div>
-        </section>
 
-        <!-- Services Section (Updated with Dynamic Icons) --><section id="services" class="scroll-snap-section py-20 bg-white">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-extrabold text-pk-dark text-center mb-4">Our AI-Driven Services</h2>
-                <p class="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
-                    A complete suite of digital services designed to enhance your presence, automate content, and deliver measurable customer insights.
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <!-- Service 1: Content & Posting --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
-                            <i data-lucide="megaphone" style="color: black;" class="w-6 h-6 text-white"></i>
+                <!-- Contact Section -->
+                <div class="contact-section">
+                    <h2>Contact Us</h2>
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <h3>Get In Touch</h3>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <p><strong>Phone</strong></p>
+                                    <p>+91 98765 43210</p>
+                                    <p>+91 87654 32109</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <p><strong>Email</strong></p>
+                                    <p>info@pkdigital.com</p>
+                                    <p>contact@pkdigital.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <p><strong>Address</strong></p>
+                                    <p>123 Business Tower, MG Road</p>
+                                    <p>Bangalore, Karnataka 560001</p>
+                                    <p>India</p>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">AI Content Creation & Posting</h3>
-                        <p class="text-gray-500 text-sm">Regular, brand-consistent ad post creation and automated posting across Instagram, YouTube Shorts, LinkedIn, Facebook, WP, and Telegram.</p>
-                    </div>
-                    <!-- Service 2: Digital Presence --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
-                            <i data-lucide="globe" style="color: black;" class="w-6 h-6 text-white"></i>
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p><strong>PK Digital AI M&A Agency</strong></p>
+                            <p>123 Business Tower, MG Road</p>
+                            <p>Bangalore, Karnataka</p>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">Holistic Digital Presence</h3>
-                        <p class="text-gray-500 text-sm">Assisting with overall digital visibility, ensuring your brand is found and trusted across the digital landscape.</p>
-                    </div>
-                    <!-- Service 3: Google Profile --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
-                            <i data-lucide="map-pin"  style="color: black;" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Google Profile & Map Services</h3>
-                        <p class="text-gray-500 text-sm">Creating and diligently keeping your Google My Business profile and map services accurate, optimized, and engaging.</p>
-                    </div>
-                    <!-- Service 4: Marketing Proposal --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
-                            <i data-lucide="file-text" style="color: black;" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Custom Yearly Marketing Proposals</h3>
-                        <p class="text-gray-500 text-sm">Developing custom, data-backed marketing proposals for yearly execution, tailored to your specific growth targets.</p>
-                    </div>
-                    <!-- Service 5: AI Analysis & Reporting --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
-                            <i data-lucide="bar-chart-3" style="color: black;" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Monthly AI Analysis & Reporting</h3>
-                        <p class="text-gray-500 text-sm">Creating and maintaining an AI analysis framework for your business, reporting monthly on crucial customer behavior and trends.</p>
-                    </div>
-                    <!-- Service 6: Landing Pages --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
-                            <i data-lucide="layout"  style="color: black;" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Conversion-Optimized Landing Pages</h3>
-                        <p class="text-gray-500 text-sm">Creating high-performance landing pages designed to convert traffic into leads or sales for specific campaigns.</p>
-                    </div>
-                    <!-- Service 7: WP Chat Linking --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
-                            <i data-lucide="message-square" style="color: black;" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">WhatsApp Chat Integration</h3>
-                        <p class="text-gray-500 text-sm">Seamlessly linking your business's WhatsApp chat number with your digital properties for immediate customer communication.</p>
-                    </div>
-                    <!-- Service 8: Digital Products --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
-                            <i data-lucide="gem" style="color: black;" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Useful Digital Product Enhancement</h3>
-                        <p class="text-gray-500 text-sm">Creating or assisting in the deployment of useful digital products (tools, calculators, resources) to enhance your core business offering.</p>
-                    </div>
-                    <!-- Service 9: Staff Training --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
-                            <i data-lucide="award" style="color: black;" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Staff Digital Training</h3>
-                        <p class="text-gray-500 text-sm">Special training programs for your staff on digital presence best practices and maximizing the use of digital tools.</p>
-                    </div>
-                    <!-- Service 10: Exhibitions --><div class="p-6 bg-pk-light border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                        <div class="inline-block p-3 rounded-full bg-pk-blue shadow-lg mb-4 transform transition duration-300 hover:rotate-3">
-                            <i data-lucide="building-2" style="color: black;" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Exhibition & Society Participation</h3>
-                        <p class="text-gray-500 text-sm">Organizing your exhibition participation and providing information/guidance on registered society compliance.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Prepare Yourself Section --><section id="prepare" class="py-20 bg-pk-dark text-white">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-extrabold text-white text-center mb-12">Prepare Yourself: Your Success Checklist</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Step 1 (Enhanced with subtle gradient border) --><div class="p-6 bg-gray-800 rounded-xl shadow-2xl transition duration-300 hover:bg-pk-blue border-b-4 border-pk-blue">
-                        <div class="flex items-center space-x-4 mb-4">
-                            <i data-lucide="target" class="w-6 h-6 text-yellow-400"></i>
-                            <h3 class="text-2xl font-bold">1. Define Clear Objectives</h3>
-                        </div>
-                        <p class="text-gray-300">Before we begin, clearly define your desired outcomes. Are you aiming for 20% growth in leads, 15% more foot traffic, or increased brand recognition? Specific goals drive our AI strategy.</p>
-                    </div>
-                    <!-- Step 2 (Enhanced with subtle gradient border) --><div class="p-6 bg-gray-800 rounded-xl shadow-2xl transition duration-300 hover:bg-pk-blue border-b-4 border-pk-blue">
-                        <div class="flex items-center space-x-4 mb-4">
-                            <i data-lucide="image" class="w-6 h-6 text-yellow-400"></i>
-                            <h3 class="text-2xl font-bold">2. Prepare Key Assets</h3>
-                        </div>
-                        <p class="text-gray-300">Gather all essential brand assets: high-resolution logos, brand guidelines, existing best-performing content, and any product/service images we can use immediately.</p>
-                    </div>
-                    <!-- Step 3 (Enhanced with subtle gradient border) --><div class="p-6 bg-gray-800 rounded-xl shadow-2xl transition duration-300 hover:bg-pk-blue border-b-4 border-pk-blue">
-                        <div class="flex items-center space-x-4 mb-4">
-                            <i data-lucide="user-check" class="w-6 h-6 text-yellow-400"></i>
-                            <h3 class="text-2xl font-bold">3. Allocate an Internal Liaison</h3>
-                        </div>
-                        <p class="text-gray-300">Designate one internal point-of-contact for quick approvals, feedback, and data sharing. This streamlines our monthly reporting and campaign deployment.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Customer Review Section --><section id="reviews" class="py-20 bg-pk-light">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-extrabold text-pk-dark text-center mb-12">Client Success Stories</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Review 1 --><div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-pk-blue">
-                        <i data-lucide="quote" class="w-8 h-8 text-pk-blue mb-4"></i>
-                        <p class="text-gray-700 italic mb-4">"The AI-driven analysis was a game-changer. We immediately stopped wasting budget on ineffective social campaigns and doubled our engagement rate within two months. PK Digital is essential."</p>
-                        <div class="font-bold text-pk-dark">- Sarah J., Small Retail Chain CEO</div>
-                    </div>
-                    <!-- Review 2 --><div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-pk-blue">
-                        <i data-lucide="quote" class="w-8 h-8 text-pk-blue mb-4"></i>
-                        <p class="text-gray-700 italic mb-4">"From the custom marketing proposal to the staff training, every service was professional and tailored. The constant social posting keeps our brand top-of-mind effortlessly."</p>
-                        <div class="font-bold text-pk-dark">- Mark L., Medium E-Commerce Manager</div>
-                    </div>
-                    <!-- Review 3 --><div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-pk-blue">
-                        <i data-lucide="quote" class="w-8 h-8 text-pk-blue mb-4"></i>
-                        <p class="text-gray-700 italic mb-4">"Their expertise with Google My Business and map services brought in a huge influx of local customers. Finally, a company that delivers measurable ROI, not just promises."</p>
-                        <div class="font-bold text-pk-dark">- Anil V., Local Service Provider Owner</div>
-                    </div>
+        <!-- Career Page -->
+        <div id="careerPage" class="page">
+            <div class="container page-content">
+                <div class="page-header">
+                    <h1>Join Our Team</h1>
+                    <p>Be part of a dynamic team that's transforming how businesses succeed in the digital world. We're looking for passionate professionals who want to make a real impact.</p>
                 </div>
-            </div>
-        </section>
 
-        <!-- About Section --><section id="about" class="py-20 bg-white">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-extrabold text-pk-dark text-center mb-4">About PK Digital AI M&A</h2>
-                <div class="lg:flex lg:space-x-12 mt-12">
-                    <!-- AI Description (2/3) --><div class="lg:w-2/3 mb-10 lg:mb-0 p-6 border rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold mb-4 border-b pb-2 text-pk-blue">How We Achieve Results: The AI M&A Edge</h3>
-                        <p class="text-gray-600 mb-4">
-                            PK Digital stands for **AI**-powered **M**arketing and **A**nalytics. We leverage proprietary machine learning models to analyze vast datasets on customer behavior, trend signals, and competitor strategies. This **Intelligence** is then used to **Automate** content creation, optimize posting schedules across platforms, and predict the most profitable marketing channels.
-                        </p>
-                        <p class="text-gray-600">
-                            Our process bypasses guesswork, delivering content that is proven to convert, and ensuring that every dollar spent contributes directly to your business goals. We provide monthly, actionable reports based on real customer data, allowing for continuous, iterative improvement.
-                        </p>
+                <div class="positions-grid">
+                    <div class="position-card">
+                        <h3>Social Media Manager</h3>
+                        <p class="position-type">Full-time</p>
+                        <p>Manage client social media accounts, create engaging content, and develop strategic campaigns across multiple platforms.</p>
                     </div>
-
-                    <!-- Contact Details (1/3) --><div class="lg:w-1/3 p-6 bg-pk-light rounded-xl shadow-lg border-l-4 border-pk-blue">
-                        <h3 class="text-2xl font-bold mb-4 text-pk-dark">Contact Us</h3>
-                        <div class="space-y-3">
-                            <p class="flex items-center text-gray-700">
-                                <i data-lucide="phone" class="w-5 h-5 mr-3 text-pk-blue"></i>
-                                **Phone:** +91 948610 06299
-                            </p>
-                            <p class="flex items-center text-gray-700">
-                                <i data-lucide="mail" class="w-5 h-5 mr-3 text-pk-blue"></i>
-                                **Email:** pkdigitalai@gmail.com
-                            </p>
-                            <p class="flex items-start text-gray-700">
-                                <i data-lucide="map-pin" class="w-5 h-5 mr-3 mt-1 text-pk-blue flex-shrink-0"></i>
-                                **Address:** Villa 85,BBCL Villa Haven,Chennai-600077.  Ultra amar avenue, Arumbakkam Chennai-600094                        
-                            </p>
-                        </div>
+                    <div class="position-card">
+                        <h3>Digital Marketing Specialist</h3>
+                        <p class="position-type">Full-time</p>
+                        <p>Design and execute comprehensive digital marketing strategies, including SEO, SEM, and email marketing campaigns.</p>
+                    </div>
+                    <div class="position-card">
+                        <h3>Content Creator</h3>
+                        <p class="position-type">Full-time / Freelance</p>
+                        <p>Create compelling visual and written content for social media, websites, and marketing materials.</p>
+                    </div>
+                    <div class="position-card">
+                        <h3>Business Analyst</h3>
+                        <p class="position-type">Full-time</p>
+                        <p>Analyze client business data, generate insights, and create detailed monthly reports on customer behavior and campaign performance.</p>
+                    </div>
+                    <div class="position-card">
+                        <h3>Web Developer</h3>
+                        <p class="position-type">Full-time</p>
+                        <p>Develop and maintain landing pages, websites, and digital products for clients using modern web technologies.</p>
+                    </div>
+                    <div class="position-card">
+                        <h3>Training Coordinator</h3>
+                        <p class="position-type">Part-time</p>
+                        <p>Conduct training sessions for client staff on digital presence management and effective use of digital tools.</p>
                     </div>
                 </div>
 
-                <!-- Map Placeholder --><div class="mt-12">
-                    <h3 class="text-2xl font-bold mb-4 text-pk-dark">Our Location</h3>
-                    <div class="map-placeholder rounded-xl shadow-xl">
-                         <!-- In a real deployment, this would be an embedded Google Map iframe --><i data-lucide="map" class="w-5 h-5 mr-2"></i> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5062963973073!2d80.1334613!3d13.067067000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526185a39acf1d%3A0x8d9727f5a002be61!2sBBCL%20Villa%20Haven!5e0!3m2!1sen!2sin!4v1764682348230!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="why-work">
+                    <h2>Why Work With Us?</h2>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🚀</div>
+                            <h3>Growth Opportunities</h3>
+                            <p>Continuous learning and career advancement in a fast-growing industry.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">💡</div>
+                            <h3>Innovative Environment</h3>
+                            <p>Work with cutting-edge AI technologies and modern digital tools.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🤝</div>
+                            <h3>Collaborative Culture</h3>
+                            <p>Join a supportive team that values collaboration and creativity.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">⚖️</div>
+                            <h3>Work-Life Balance</h3>
+                            <p>Flexible work arrangements and competitive benefits package.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Career Section --><section id="career" class="py-20 bg-pk-dark text-white">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-extrabold text-white text-center mb-4">Career Opportunities</h2>
-                <p class="text-xl text-blue-400 text-center mb-12 max-w-2xl mx-auto">
-                    Join the team shaping the future of digital marketing. We are looking for talented individuals passionate about AI, M&A strategy, and client success.
-                </p>
-
-                <div class="bg-gray-800 p-8 rounded-xl shadow-2xl max-w-lg mx-auto">
-                    <form onsubmit="event.preventDefault(); showCareerMessage();">
-                        <div class="mb-6">
-                            <label for="name" class="block text-sm font-medium text-gray-200 mb-2">Full Name</label>
-                            <input type="text" id="name" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-pk-blue focus:border-pk-blue" required>
+                <div class="application-form">
+                    <h2>Apply Now</h2>
+                    <form id="careerForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name *</label>
+                                <input type="text" name="name" required placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address *</label>
+                                <input type="email" name="email" required placeholder="your.email@example.com">
+                            </div>
                         </div>
-
-                        <div class="mb-6">
-                            <label for="email" class="block text-sm font-medium text-gray-200 mb-2">Email ID</label>
-                            <input type="email" id="email" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-pk-blue focus:border-pk-blue" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Phone Number *</label>
+                                <input type="tel" name="phone" required placeholder="+91 98765 43210">
+                            </div>
+                            <div class="form-group">
+                                <label>Position Applied For *</label>
+                                <select name="position" required>
+                                    <option value="">Select a position</option>
+                                    <option value="Social Media Manager">Social Media Manager</option>
+                                    <option value="Digital Marketing Specialist">Digital Marketing Specialist</option>
+                                    <option value="Content Creator">Content Creator</option>
+                                    <option value="Business Analyst">Business Analyst</option>
+                                    <option value="Web Developer">Web Developer</option>
+                                    <option value="Training Coordinator">Training Coordinator</option>
+                                </select>
+                            </div>
                         </div>
-
-                        <div class="mb-8">
-                            <label for="role" class="block text-sm font-medium text-gray-200 mb-2">Select Preferred Role</label>
-                            <select id="role" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-pk-blue focus:border-pk-blue">
-                                <option value="" disabled selected>Select an open position</option>
-                                <option value="ai-analyst">AI Marketing Analyst (Service 5)</option>
-                                <option value="content-specialist">Social Content Specialist (Service 1)</option>
-                                <option value="sales-strategist">Digital Sales Strategist (Service 4)</option>
-                                <option value="trainer">Staff Digital Trainer (Service 9)</option>
-                            </select>
+                        <div class="form-group">
+                            <label>Cover Letter / Message *</label>
+                            <textarea name="message" rows="6" required placeholder="Tell us about yourself, your experience, and why you'd be a great fit for this role..."></textarea>
                         </div>
-
-                        <button type="submit" class="w-full bg-pk-blue text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition duration-300 transform hover:scale-[1.01] shadow-xl">
-                            Apply Now
-                        </button>
+                        <button type="submit" class="submit-button">Submit Application</button>
                     </form>
-                    <div id="career-message" class="mt-4 text-center text-green-400 font-medium hidden">
-                        Thank you for your interest! Your application has been submitted for review.
-                    </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Terms, Conditions, and Policy Section --><section id="policy" class="py-20 bg-pk-light">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-extrabold text-pk-dark text-center mb-12">Terms, Conditions & Privacy Policy</h2>
-                <div class="bg-white p-8 rounded-xl shadow-2xl border border-gray-200">
-                    <!-- Terms and Conditions --><h3 class="text-2xl font-bold mb-4 text-pk-blue">1. Terms and Conditions</h3>
-                    <p class="text-gray-600 mb-6">
-                        Services are rendered under a custom-drafted yearly agreement based on the marketing proposal (Service 4). All content created by PK Digital remains the intellectual property of the client upon final payment. Contract minimum duration is twelve (12) months. Service scope adjustments require a 30-day written notice and may affect the agreed-upon monthly retainer.
-                    </p>
-
-                    <!-- Privacy Policy --><h3 class="text-2xl font-bold mb-4 text-pk-blue">2. Privacy Policy</h3>
-                    <p class="text-gray-600">
-                        PK Digital is committed to protecting the privacy of both clients and their customers. All customer behavior data accessed for AI analysis (Service 5) is anonymized and used exclusively for the purpose of improving the client's marketing performance. We do not share, sell, or disclose specific client data to third parties. Secure data handling protocols are strictly enforced for all analytical processes.
-                    </p>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
 
-    <!-- Footer --><footer class="bg-pk-dark py-8">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
-            <img src="gemini_pk.png" alt="PKDIGITAL-AI Your Digital Partner" class="footer-logo mx-auto">
-            <p>&copy; <span id="current-year"></span> PK Digital AI M&A Agency. All rights reserved.</p>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 PK Digital AI M&A Agency. All rights reserved.</p>
+            <p class="footer-tagline">Empowering businesses with AI-driven digital solutions.</p>
         </div>
     </footer>
 
-    <!-- JavaScript for Icon Replacement, Footer Year, and Form Messaging --><script>
-        // Lucide Icons replacement
-        lucide.createIcons();
-
-        // Dynamic Footer Year
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Simple Career Form Message
-        function showCareerMessage() {
-            const messageElement = document.getElementById('career-message');
-            messageElement.classList.remove('hidden');
-            // Hide the form message after 5 seconds
-            setTimeout(() => {
-                messageElement.classList.add('hidden');
-            }, 5000);
-        }
-
-        // Simple JavaScript for smooth scrolling (optional, but good practice)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
